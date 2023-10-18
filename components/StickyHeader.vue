@@ -21,7 +21,7 @@
     </div>
     <nav>
       <ul>
-        <li><button v-on:click="navigateTo(undefined)" >Home</button></li>
+        <li><button v-on:click="navigateTo('/')" >Home</button></li>
         <li><button v-on:click="navigateTo('/about')" >About</button></li>
         <li><button v-on:click="navigateTo('/contact')" >Contact</button></li>
       </ul>
