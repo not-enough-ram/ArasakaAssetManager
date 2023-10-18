@@ -3,9 +3,7 @@
 </script>
 
 <template>
-  <nav>
-
-  </nav>
+Asset
 </template>
 
 <style scoped>
