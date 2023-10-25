@@ -21,9 +21,9 @@
     </div>
     <nav>
       <ul>
-        <li><StandardButton v-on:click="navigateTo('/')" >Home</StandardButton></li>
-        <li><StandardButton v-on:click="navigateTo('/about')" >About</StandardButton></li>
-        <li><StandardButton v-on:click="navigateTo('/contact')" >Contact</StandardButton></li>
+        <li><BaseButton v-on:click="navigateTo('/')" >Home</BaseButton></li>
+        <li><BaseButton v-on:click="navigateTo('/about')" >About</BaseButton></li>
+        <li><BaseButton v-on:click="navigateTo('/contact')" >Contact</BaseButton></li>
       </ul>
     </nav>
   </header>
