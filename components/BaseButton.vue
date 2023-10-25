@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <button class="my-button" @click="">
+  <button @click="$emit('click')">
     <slot></slot>
   </button>
 </template>
