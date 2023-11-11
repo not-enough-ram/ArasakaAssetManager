@@ -4,7 +4,6 @@ import Sidebar from "~/components/Sidebar.vue";
 </script>
 
 <template>
-  <StickyHeader/>
   <aside>
     <Sidebar/>
   </aside>

@@ -1,5 +1,7 @@
 <script setup lang="ts">
 
+  import {BaseButton} from "#components";
+
   const user = ref({
     username: '',
     password: '',
@@ -35,7 +37,7 @@
       />
     </div>
     <div>
-      <button @click.prevent="login" class="bg-black text-green-500 border-2 border-green-500 rounded-xl shadow">Login</button>
+      <BaseButton @click.prevent="login">Login</BaseButton>
     </div>
   </div>
 </template>

@@ -1,14 +1,6 @@
 <link rel="stylesheet" href="../assets/sass/style.css">
 <script setup lang="ts">
-  import { defineComponent } from 'vue';
-
-  defineComponent({
-    components:{
-    },
-    methods: {
-    }
-  })
-
+  import {BaseButton} from "#components";
 </script>
 
 <template>

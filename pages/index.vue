@@ -1,6 +1,4 @@
 <script setup lang="ts">
-  import StickyHeader from "~/components/StickyHeader.vue";
-  import Footer from "~/components/Footer.vue";
   import Login from "~/components/Login.vue";
 
 </script>
