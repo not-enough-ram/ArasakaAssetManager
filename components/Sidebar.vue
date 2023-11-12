@@ -2,7 +2,7 @@
   <aside class="sidebar">
     <ul>
       <li><button @click="navigateTo('/mygames')">Show My Games</button></li>
-      <li><button @click="showAssets">Show My Assets</button></li>
+      <li><button @click="navigateTo('/myassets')">Show My Assets</button></li>
       <!-- Add more sidebar entries here -->
     </ul>
   </aside>
