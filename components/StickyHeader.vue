@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="../assets/sass/style.css">
 <script setup lang="ts">
   import {BaseButton} from "#components";
+  const authenticated = false;
 </script>
 
 <template>
@@ -14,8 +15,8 @@
     <nav>
       <ul>
         <li><BaseButton v-on:click="navigateTo('/')" >Home</BaseButton></li>
-        <li><BaseButton v-on:click="navigateTo('/about')" >About</BaseButton></li>
-        <li><BaseButton v-on:click="navigateTo('/contact')" >Contact</BaseButton></li>
+        <li><BaseButton v-if="!authenticated" v-on:click="navigateTo('/login')" >Login</BaseButton></li>
+        <li><BaseButton v-if="authenticated" v-on:click="navigateTo('/profile')" >Profile</BaseButton></li>
       </ul>
     </nav>
   </header>

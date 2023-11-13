@@ -1,5 +1,5 @@
 <template>
-  <aside class="sidebar">
+  <aside class="sidebar" v-if="authenticated">
     <ul>
       <li><button @click="navigateTo('/mygames')">Show My Games</button></li>
       <li><button @click="navigateTo('/myassets')">Show My Assets</button></li>
@@ -9,13 +9,10 @@
 </template>
 
 <script setup>
-const showGames = () => {
-  // Logic to show games
-};
+import {authenticateUser} from '../services/ApiService'
+const authenticated = ref(false)
+authenticated.value = authenticateUser("123123", "user");
 
-const showAssets = () => {
-  // Logic to show assets
-};
 </script>
 
 <style scoped>
