@@ -1,66 +1,79 @@
-<link rel="stylesheet" href="../assets/sass/style.css">
 <script setup lang="ts">
-  import {BaseButton} from "#components";
-  const authenticated = true;
+import { BaseButton } from "#components";
+const authenticated = true;
 </script>
 
 <template>
   <header class="sticky-header">
     <div class="logo">
-      <img src="../assets/images/arasaka_green.png" height="50" alt="a cat"/>
+      <img src="../assets/images/arasaka_green.png" height="50" alt="a cat" />
     </div>
     <div>
       <h2 class="name">arasaka asset manager</h2>
     </div>
     <nav>
       <ul>
-        <li><BaseButton v-on:click="navigateTo('/')" >Home</BaseButton></li>
-        <li><BaseButton v-if="!authenticated" v-on:click="navigateTo('/login')" >Login</BaseButton></li>
-        <li><BaseButton v-if="authenticated" v-on:click="navigateTo('/profile')" >Profile</BaseButton></li>
-        <li><BaseButton v-if="authenticated" v-on:click="navigateTo('/createcontent')" >Add Stuff</BaseButton></li>
+        <li><BaseButton v-on:click="navigateTo('/')">Home</BaseButton></li>
+        <li>
+          <BaseButton v-if="!authenticated" v-on:click="navigateTo('/login')"
+            >Login</BaseButton
+          >
+        </li>
+        <li>
+          <BaseButton v-if="authenticated" v-on:click="navigateTo('/profile')"
+            >Profile</BaseButton
+          >
+        </li>
+        <li>
+          <BaseButton
+            v-if="authenticated"
+            v-on:click="navigateTo('/createcontent')"
+            >Add Stuff</BaseButton
+          >
+        </li>
       </ul>
     </nav>
   </header>
 </template>
 
 <style scoped>
-  @font-face {
-    font-family: 'cedge1';
-    src: url('../assets/fonts/cedge1.ttf') format('truetype');
-  }
-  
-  .sticky-header {
-    position: sticky;
-    top: 0;
-    background-color: #000000;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+@font-face {
+  font-family: "cedge1";
+  src: url("../assets/fonts/cedge1.ttf") format("truetype");
+}
 
-  .logo img {
-    max-height: 50px;
-  }
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: #000000;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .name {
-    font-family: cedge1,serif;
-    color: #13eb5e;
-    font-size: xx-large;
-  }
+.logo img {
+  max-height: 50px;
+}
 
-  nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-  }
+.name {
+  font-family: cedge1, serif;
+  color: #13eb5e;
+  font-size: xx-large;
+}
 
-  nav li {
-    margin: 0 10px;
-  }
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
 
-  nav a {
-    text-decoration: none;
-    color: #72f502;
-  }
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #72f502;
+}
 </style>
