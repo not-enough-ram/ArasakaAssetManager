@@ -16,7 +16,7 @@
 
 <template>
   <h1>My Games</h1>
-  <Game v-for="game in gamesData" :title = "game.title" :game-master = "game.gameMaster" :image-url = "game.imageUrl" :players = "game.players" :text = "game.text"/>
+  <Game v-for="game in gamesData" :key = "game.id" :title = "game.title" :game-master = "game.gameMaster" :image-url = "game.imageUrl" :players = "game.players" :text = "game.text"/>
 </template>
 
 <style scoped>

@@ -9,9 +9,10 @@
 </template>
 
 <script setup>
-import {authenticateUser} from '../services/ApiService'
-const authenticated = ref(false)
-authenticated.value = authenticateUser("123123", "user");
+const authenticated = true;
+// import {authenticateUser} from '../services/AuthenticationService.js'
+// const authenticated = ref(false)
+// authenticated.value = authenticateUser("123123", "user");
 
 </script>
 

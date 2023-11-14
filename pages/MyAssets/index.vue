@@ -48,7 +48,7 @@ onMounted(async () => {
     return
   }
 
-  assetsData.value =  mockedData || data
+  assetsData.value =  mockedData
   console.log(data);
 });
 
@@ -56,7 +56,7 @@ onMounted(async () => {
 
 <template>
   <h1>My Games</h1>
-  <Game v-for="asset in assetsData" :id = "asset.id" :title = "asset.title" :description = "asset.description" :owner = "asset.owner" :image-url = "asset.imageUrl"/>
+  <Asset v-for="(asset) in assetsData" :key = "asset.id" :title = "asset.title" :description = "asset.description" :owner = "asset.owner" :image-url = "asset.imageUrl"/>
 </template>
 
 <style scoped>

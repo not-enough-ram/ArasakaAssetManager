@@ -1,8 +1,7 @@
-<script>
-</script>
+<script></script>
 
 <template>
-  <button class="hexagon-button" @click="$emit('click')">
+  <button class="hexagon-button">
     <span class="hexagon-inner">
       <slot></slot>
     </span>
@@ -17,11 +16,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #00FF00;
+  border: 2px solid #00ff00;
 }
 
 .hexagon-inner {
-  color: #0F0; /* Matrix green color */
+  color: #0f0; /* Matrix green color */
   text-align: center;
 }
 </style>

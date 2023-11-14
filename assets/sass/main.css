@@ -5,3 +5,6 @@
     font-family: 'rabikiso';
     src: url('/assets/fonts/cedge1.ttf') format('truetype');
 }
+body{
+    background: black;
+}
