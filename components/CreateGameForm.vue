@@ -34,16 +34,18 @@ function submitForm() {
 </script>
 
 <template>
+  <div class="w-full h-full flex justify-center inset-0">
+  <div class="w-1/3 border-2 border-primary p-5">
   <form @submit.prevent="submitForm" class="space-y-4">
     <BaseInput
       type="text"
       v-model="formData.title"
-      placeholder="Title"
+      placeholder="Title..."
     />
     <BaseInput
       type="text"
       v-model="formData.gameMaster"
-      placeholder="Game Master"
+      placeholder="Game Master..."
     />
 
     <div
@@ -54,7 +56,7 @@ function submitForm() {
       <BaseInput
         type="text"
         v-model="formData.players[index]"
-        placeholder="Player Name"
+        placeholder="Player Name..."
       />
       <BaseButton
         type="button"
@@ -69,11 +71,12 @@ function submitForm() {
     >
       Add Player
     </BaseButton>
-    <BaseInput
-      type="textarea"
+    <BaseTextarea
       v-model="formData.description"
-      placeholder="Description"
-      class="h-32"
+      placeholder="Description..."
+      rows="4"
+      :minHeight="'150px'"
+      :minWidth="'400px'"
     />
 
     <BaseInput
@@ -85,6 +88,8 @@ function submitForm() {
       Submit
     </BaseButton>
   </form>
+</div>
+</div>
 </template>
 
 <style scoped></style>
