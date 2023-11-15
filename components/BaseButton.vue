@@ -1,18 +1,19 @@
 <script></script>
 
 <template>
-  <button class="hexagon-button">
-    <span class="hexagon-inner">
+  <button class="bg-black w-28 h-8 flex items-center justify-center border-2 border-green-500">
+    <span class="text-primary text-center">
       <slot></slot>
     </span>
   </button>
 </template>
 
+
 <style scoped>
-.hexagon-button {
+/* .hexagon-button {
   background-color: black;
-  width: 7em; /* Adjust as needed */
-  height: 2em; /* Three times the width */
+  width: 7em; 
+  height: 2em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,7 +21,7 @@
 }
 
 .hexagon-inner {
-  color: #0f0; /* Matrix green color */
+  color: #0f0; 
   text-align: center;
-}
+} */
 </style>

@@ -15,7 +15,7 @@
 <template>
   <div class="">
     <div>
-      <label for="username" class="text-green-500"><b>Username</b></label>
+      <label for="username" class="text-primary"><b>Username</b></label>
       <input
           v-model="user.username"
           type="text"
