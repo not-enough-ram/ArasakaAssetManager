@@ -1,7 +1,7 @@
 <script></script>
 
 <template>
-  <button class="bg-black w-28 h-8 flex items-center justify-center border-2 border-green-500">
+  <button class="bg-bg w-28 h-8 flex items-center justify-center border-2 border-green-500">
     <span class="text-primary text-center">
       <slot></slot>
     </span>

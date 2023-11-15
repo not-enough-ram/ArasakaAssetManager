@@ -57,12 +57,11 @@ function submitForm() {
         type="text"
         v-model="formData.players[index]"
         placeholder="Player Name"
-        class="border p-2 rounded flex-grow"
       />
       <BaseButton
         type="button"
         @click="removePlayer(index)"
-        class="bg-red-500 text-white p-2 rounded"
+
       >
         Remove
       </BaseButton>
@@ -70,7 +69,7 @@ function submitForm() {
     <BaseButton
       type="button"
       @click="addPlayer"
-      class="bg-blue-500 text-white p-2 rounded"
+
     >
       Add Player
     </BaseButton>
@@ -85,7 +84,7 @@ function submitForm() {
       @change="handleFileUpload"
       class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100"
     />
-    <BaseButton type="submit" class="bg-green-500 text-white p-2 rounded">
+    <BaseButton type="submit">
       Submit
     </BaseButton>
   </form>
