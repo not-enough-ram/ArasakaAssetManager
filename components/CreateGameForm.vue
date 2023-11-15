@@ -35,17 +35,15 @@ function submitForm() {
 
 <template>
   <form @submit.prevent="submitForm" class="space-y-4">
-    <input
+    <BaseInput
       type="text"
       v-model="formData.title"
       placeholder="Title"
-      class="border p-2 rounded"
     />
-    <input
+    <BaseInput
       type="text"
       v-model="formData.gameMaster"
       placeholder="Game Master"
-      class="border p-2 rounded"
     />
 
     <div
@@ -53,7 +51,7 @@ function submitForm() {
       :key="index"
       class="flex items-center space-x-2"
     >
-      <input
+      <BaseInput
         type="text"
         v-model="formData.players[index]"
         placeholder="Player Name"
@@ -61,7 +59,6 @@ function submitForm() {
       <BaseButton
         type="button"
         @click="removePlayer(index)"
-
       >
         Remove
       </BaseButton>
@@ -69,20 +66,20 @@ function submitForm() {
     <BaseButton
       type="button"
       @click="addPlayer"
-
     >
       Add Player
     </BaseButton>
-    <textarea
+    <BaseInput
+      type="textarea"
       v-model="formData.description"
       placeholder="Description"
-      class="border p-2 rounded h-32"
-    ></textarea>
+      class="h-32"
+    />
 
-    <input
+    <BaseInput
       type="file"
       @change="handleFileUpload"
-      class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100"
+      class="text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100"
     />
     <BaseButton type="submit">
       Submit

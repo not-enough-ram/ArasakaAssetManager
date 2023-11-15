@@ -11,19 +11,24 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#00FF00', // Vibrant Green
-        secondary: '#0000FF', // Neon Blue
-        //tertiary: '#A0A0A0', // Metallic Gray
-        error: '#FF0000', // Bright Red
-        bg: 'var(--color-background)',
-        highlight: '#FF00FF', // Neon Pink
-        warning: '#FFA500', // Orange
-        //success: '#008000', // Bright Green
-        //information: '#5F9EA0', // Light Blue
+        primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',
+        tertiary: 'var(--color-tertiary)',
+        error: 'var(--color-error)',
+        bg: 'var(--color-bg)',
+        highlight: 'var(--color-highlight)',
+        warning: 'var(--color-warning)',
+        success: 'var(--color-success)',
+        information: 'var(--color-information)',
       },
       fontFamily: {
         mono: ['"IBM Plex Mono"', 'monospace'],
       },
+    },
+  },
+  variants: {
+    extend: {
+      brightness: ['hover'],
     },
   },
   plugins: [],
