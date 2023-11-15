@@ -13,21 +13,21 @@ const authenticated = true;
     </div>
     <nav>
       <ul>
-        <li><BaseButton v-on:click="navigateTo('/')">Home</BaseButton></li>
+        <li><BaseButton @click="navigateTo('/')">Home</BaseButton></li>
         <li>
-          <BaseButton v-if="!authenticated" v-on:click="navigateTo('/login')"
+          <BaseButton v-if="!authenticated" @click="navigateTo('/login')"
             >Login</BaseButton
           >
         </li>
         <li>
-          <BaseButton v-if="authenticated" v-on:click="navigateTo('/profile')"
+          <BaseButton v-if="authenticated" @click="navigateTo('/profile')"
             >Profile</BaseButton
           >
         </li>
         <li>
           <BaseButton
             v-if="authenticated"
-            v-on:click="navigateTo('/createcontent')"
+            @click="navigateTo('/createcontent')"
             >Add Stuff</BaseButton
           >
         </li>
@@ -50,6 +50,7 @@ const authenticated = true;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 10;
 }
 
 .logo img {

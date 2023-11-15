@@ -4,8 +4,8 @@
       @input="updateValue($event.target.value)"
       :placeholder="placeholder"
       :rows="rows"
-      class="bg-bg border-2 border-primary text-primary placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-200 ease-in-out p-2"
-      :style="{ minHeight, minWidth }"
+      class="bg-bg w-full h-full border-2 border-primary text-primary placeholder-gray-500 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-200 ease-in-out p-2"
+      :style="{ maxHeight, maxWidth }"
     ></textarea>
   </template>
   
@@ -25,13 +25,13 @@
         type: [String, Number],
         default: 4
       },
-      minHeight: {
+      maxHeight: {
         type: String,
-        default: '100px'
+        default: '100%'
       },
-      minWidth: {
+      maxWidth: {
         type: String,
-        default: '300px'
+        default: '100%'
       }
     },
     methods: {

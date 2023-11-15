@@ -9,17 +9,22 @@ const props = defineProps({
 const formData = ref({
   title: props.title || "",
   gameMaster: props.gameMaster || "",
-  players: props.players || [],
+  players: props.players || [""],
   description: props.description || "",
   image: null as File | null,
 });
 
 function addPlayer() {
+  if (formData.value.players.length === 10){
+    return
+  }
   formData.value.players.push("");
 }
 
 function removePlayer(index: number) {
-  formData.value.players.splice(index, 1);
+  if (formData.value.players.length > 1) {
+    formData.value.players.splice(index, 1);
+  }
 }
 
 function handleFileUpload(event: Event) {
@@ -47,7 +52,15 @@ function submitForm() {
       v-model="formData.gameMaster"
       placeholder="Game Master..."
     />
-
+    <div class="flex w-full justify-between">
+      <span class="text-primary">Players: {{ formData.players.length }}/10</span>
+    <BaseButton
+      type="button"
+      @click="addPlayer"
+    >
+      Add Player
+    </BaseButton>
+  </div>
     <div
       v-for="(player, index) in formData.players"
       :key="index"
@@ -65,31 +78,31 @@ function submitForm() {
         Remove
       </BaseButton>
     </div>
-    <BaseButton
-      type="button"
-      @click="addPlayer"
-    >
-      Add Player
-    </BaseButton>
     <BaseTextarea
       v-model="formData.description"
       placeholder="Description..."
-      rows="4"
-      :minHeight="'150px'"
-      :minWidth="'400px'"
+      :maxHeight="'350px'"
+      :maxWidth="'600px'"
     />
-
-    <BaseInput
+  <div class="w-full mb-12 cursor-pointer">
+    <input
       type="file"
       @change="handleFileUpload"
-      class="text-sm file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-violet-50 file:text-violet-700 hover:file:bg-violet-100"
+      class="text-sm file:mr-4 file:py-2 file:px-4  file:border-2 file:border-primary file:text-sm file:font-semibold file:bg-bg file:text-primary "
     />
+  </div>
+  <div class="w-full flex justify-center">
     <BaseButton type="submit">
       Submit
     </BaseButton>
+  </div>
   </form>
 </div>
 </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+#file-upload-button {
+  cursor: pointer;
+}
+</style>

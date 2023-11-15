@@ -17,5 +17,6 @@
     --color-information: #5F9EA0; /* Light Blue */
 }  
 body {
+    color: var(--color-primary);
     background: var(--color-bg);
 }
