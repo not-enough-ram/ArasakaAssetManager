@@ -1,6 +1,6 @@
 <template>
   <aside
-    class="sidebar h-full bg-bg border-r-2 border-primary pt-8 absolute"
+    class="sidebar bg-bg border-r-2 border-primary pt-8 fixed"
     v-if="authenticated"
   >
     <ul class="bg-bg mb-8">
@@ -29,7 +29,8 @@ const authenticated = true;
 
 <style scoped>
 .sidebar {
-  height: 100vh;
+  box-sizing: border-box;
+  height: 100%;
   width: 250px;
 }
 

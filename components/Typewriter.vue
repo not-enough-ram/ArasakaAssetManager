@@ -2,12 +2,16 @@
   <div class="bg-bg">
     <div class="typewriter flex items-center justify-start" ref="typewriter">
       <slot :animatedText="animatedText" />
-      <span class="blinker text-primary" ref="blinker">|</span>
+      <span v-if="showBlinker" class="blinker text-primary" ref="blinker"
+        >|</span
+      >
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { defineProps, ref, onMounted, nextTick, watch } from 'vue';
+
 const props = defineProps({
   text: {
     type: String,
@@ -16,6 +20,14 @@ const props = defineProps({
   typingDelay: {
     type: Number,
     default: 150,
+  },
+  blinkerVisibleAfter: {
+    type: Boolean,
+    default: false,
+  },
+  showBlinker: {
+    type: Boolean,
+    default: true,
   },
 });
 
@@ -26,18 +38,31 @@ const blinker: Ref<HTMLElement | null> = ref(null);
 function startTypingAnimation(text: string) {
   let index = 0;
   animatedText.value = '';
+
   const timer = setInterval(() => {
     if (index < text.length) {
       animatedText.value += text.charAt(index);
       index++;
     } else {
       clearInterval(timer);
+      if (!props.blinkerVisibleAfter && blinker.value) {
+        blinker.value.style.display = 'none';
+      }
     }
   }, props.typingDelay);
 }
 
-onMounted(() => {
+onMounted(async () => {
   startTypingAnimation(props.text);
+
+  await nextTick();
+  if (typewriter.value) {
+    const computedStyle = window.getComputedStyle(typewriter.value);
+    if (blinker.value) {
+      blinker.value.style.display = props.showBlinker ? 'inline' : 'none';
+      blinker.value.style.fontSize = computedStyle.fontSize;
+    }
+  }
 });
 
 watch(
@@ -46,19 +71,6 @@ watch(
     startTypingAnimation(newText);
   }
 );
-
-onMounted(async () => {
-  await nextTick();
-  if (typewriter.value instanceof HTMLElement) {
-    const typewriterElement = typewriter.value.querySelector(
-      ':scope > :first-child'
-    ) as HTMLElement;
-    const computedStyle = window.getComputedStyle(typewriterElement);
-    if (blinker.value instanceof HTMLElement) {
-      blinker.value.style.fontSize = computedStyle.fontSize;
-    }
-  }
-});
 </script>
 
 <style>

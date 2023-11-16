@@ -1,8 +1,8 @@
 <template>
-  <div class="border-2 border-primary">
+  <div class="border-2 border-primary mb-8">
     <div class="">
       <div class="flex flex-row">
-        <div class="h-1/3 w-1/3">
+        <div class="h-1/3 w-1/3 border-primary border-r-2">
           <img
             :src="playerAvatar"
             alt="Player's Avatar"
@@ -10,15 +10,28 @@
           />
         </div>
         <div class="flex flex-col">
-          <h3 class="text-3xl mb-5">{{ player.name }}</h3>
+          <h3 class="text-5xl m-5">{{ player.name }}</h3>
+          <ul>
+            <li class="text-2xl ml-5">Team: {{ player.team }}</li>
+            <li class="text-2xl ml-5">Position: {{ player.position }}</li>
+            <li class="text-2xl ml-5">Points: {{ player.points }}</li>
+          </ul>
         </div>
       </div>
-      <ul>
-        <li>Team: {{ player.team }}</li>
-        <li>Position: {{ player.position }}</li>
-        <li>Points: {{ player.points }}</li>
-      </ul>
-      <p>{{ player.description }}</p>
+      <Typewriter
+        :text="player.description"
+        :typingDelay="5"
+        :showBlinker="false"
+        class="inline-block border-t-2 border-primary w-full"
+      >
+        <template #default="{ animatedText }">
+          <p
+            class="text-primary whitespace-normal p-5 h-52 overflow-y-scroll custom-scroll-bar m-1.5 ml-0"
+          >
+            {{ animatedText }}
+          </p>
+        </template>
+      </Typewriter>
     </div>
   </div>
 </template>

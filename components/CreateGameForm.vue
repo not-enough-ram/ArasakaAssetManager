@@ -40,7 +40,7 @@ const playerCount = computed(() => formData.value.players.length.toString());
 </script>
 
 <template>
-  <div class="w-1/3 border-2 border-primary p-5">
+  <div class="w-1/3 border-2 border-primary p-5 max-w-360">
     <form @submit.prevent="submitForm" class="space-y-4">
       <BaseInput type="text" v-model="formData.title" placeholder="Title..." />
       <BaseInput

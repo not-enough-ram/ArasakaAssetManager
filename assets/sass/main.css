@@ -49,3 +49,24 @@ body {
 .hover\:inverted:hover {
   @apply inverted;
 }
+
+.custom-scroll-bar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scroll-bar::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+.custom-scroll-bar::-webkit-scrollbar-thumb {
+  background: #00ff00;
+}
+
+.custom-scroll-bar::-webkit-scrollbar-thumb:hover {
+  background: #009900;
+}
+
+.custom-scroll-bar {
+  scrollbar-color: #00ff00 #000000;
+  scrollbar-width: thin;
+}
