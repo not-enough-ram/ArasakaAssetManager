@@ -1,22 +1,21 @@
 <template>
   <aside
-    class="sidebar h-full bg-bg border-r-2 border-primary pt-8"
+    class="sidebar h-full bg-bg border-r-2 border-primary pt-8 absolute"
     v-if="authenticated"
   >
     <ul class="bg-bg mb-8">
       <li class="w-full flex items-center">
         <span class="icon-folder mx-5"></span
         ><button @click="navigateTo('/mygames')">
-          <span class="inverted p-1">Show My Games</span>
+          <span class="hover:inverted p-1">Show My Games</span>
         </button>
       </li>
       <li class="w-full flex items-center">
         <span class="icon-folder mx-5"></span
         ><button @click="navigateTo('/myassets')">
-          <span class="inverted p-1">Show My Assets</span>
+          <span class="hover:inverted p-1">Show My Assets</span>
         </button>
       </li>
-      <!-- Add more sidebar entries here -->
     </ul>
   </aside>
 </template>

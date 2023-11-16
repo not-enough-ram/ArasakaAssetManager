@@ -1,9 +1,16 @@
-<script setup lang="ts">
-const text = 'Follow the white Rabbit...';
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <CreateGameForm />
+  <section
+    class="mt-8 w-full h-full flex flex-col justify-center items-center inset-0"
+  >
+    <Typewriter :text="'Add a game...'" :typingDelay="150" class="mb-5">
+      <template #default="{ animatedText }">
+        <h1 class="text-primary text-4xl">{{ animatedText }}</h1>
+      </template>
+    </Typewriter>
+    <CreateGameForm />
+  </section>
 </template>
 
 <style scoped></style>

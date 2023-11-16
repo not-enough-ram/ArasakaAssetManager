@@ -46,3 +46,6 @@ body {
   color: var(--color-bg);
   background: var(--color-primary);
 }
+.hover\:inverted:hover {
+  @apply inverted;
+}
