@@ -36,6 +36,8 @@ function submitForm() {
   // Process form data here
   console.log(formData.value);
 }
+const playerCount = computed(() => formData.value.players.length.toString());
+
 </script>
 
 <template>
@@ -53,8 +55,12 @@ function submitForm() {
       placeholder="Game Master..."
     />
     <div class="flex w-full justify-between">
-      <span class="text-primary">Players: {{ formData.players.length }}/10</span>
-    <BaseButton
+      <span class="text-primary">Players: <Typewriter :text="playerCount" :typingDelay="150" class="inline-block">
+    <template #default="{ animatedText }">
+      <span class="text-primary font-mono">{{ animatedText }}</span>
+    </template>
+  </Typewriter>/10 </span>
+      <BaseButton
       type="button"
       @click="addPlayer"
     >

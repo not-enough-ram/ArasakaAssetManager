@@ -7,7 +7,7 @@
     </div>
   </template>
   
-  <script setup lang="ts">  
+  <script setup lang="ts">
   const props = defineProps({
     text: {
       type: String,
@@ -23,20 +23,30 @@
   const typewriter: Ref<HTMLElement | null> = ref(null);
   const blinker: Ref<HTMLElement | null> = ref(null);
   
-  onMounted(async () => {
+
+  function startTypingAnimation(text: string) {
     let index = 0;
+    animatedText.value = '';
     const timer = setInterval(() => {
-      if (index < props.text.length) {
-        animatedText.value += props.text.charAt(index);
+      if (index < text.length) {
+        animatedText.value += text.charAt(index);
         index++;
       } else {
         clearInterval(timer);
       }
     }, props.typingDelay);
+  }
   
+  onMounted(() => {
+    startTypingAnimation(props.text);
+  });
+  
+  watch(() => props.text, (newText) => {
+    startTypingAnimation(newText);
+  });
+  
+  onMounted(async () => {
     await nextTick();
-  
-
     if (typewriter.value instanceof HTMLElement) {
       const typewriterElement = typewriter.value.querySelector(':scope > :first-child') as HTMLElement; 
       const computedStyle = window.getComputedStyle(typewriterElement);
@@ -46,6 +56,7 @@
     }
   });
   </script>
+  
   
   <style>
   .typewriter {
