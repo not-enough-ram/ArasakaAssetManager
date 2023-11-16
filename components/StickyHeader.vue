@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BaseButton } from "#components";
+import { BaseButton } from '#components';
 const authenticated = true;
 </script>
 
@@ -25,9 +25,7 @@ const authenticated = true;
           >
         </li>
         <li>
-          <BaseButton
-            v-if="authenticated"
-            @click="navigateTo('/createcontent')"
+          <BaseButton v-if="authenticated" @click="navigateTo('/createcontent')"
             >Add Stuff</BaseButton
           >
         </li>
@@ -38,8 +36,8 @@ const authenticated = true;
 
 <style scoped>
 @font-face {
-  font-family: "cedge1";
-  src: url("../assets/fonts/cedge1.ttf") format("truetype");
+  font-family: 'cedge1';
+  src: url('../assets/fonts/cedge1.ttf') format('truetype');
 }
 
 .sticky-header {

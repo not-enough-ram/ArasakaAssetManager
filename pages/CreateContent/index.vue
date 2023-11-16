@@ -1,11 +1,9 @@
 <script setup lang="ts">
-const text = "Follow the white Rabbit..."
+const text = 'Follow the white Rabbit...';
 </script>
 
 <template>
-  <CreateGameForm/>
+  <CreateGameForm />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

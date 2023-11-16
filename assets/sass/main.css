@@ -2,21 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 @font-face {
-    font-family: 'rabikiso';
-    src: url('/assets/fonts/cedge1.ttf') format('truetype');
+  font-family: 'rabikiso';
+  src: url('/assets/fonts/cedge1.ttf') format('truetype');
 }
 :root {
-    --color-primary: #00FF00; /* Vibrant Green */
-    --color-secondary: #0000FF; /* Neon Blue */
-    --color-tertiary: #A0A0A0; /* Metallic Gray */
-    --color-error: #FF0000; /* Bright Red */
-    --color-bg: #000000; /* Black Background */
-    --color-highlight: #FF00FF; /* Neon Pink */
-    --color-warning: #FFA500; /* Orange */
-    --color-success: #008000; /* Bright Green */
-    --color-information: #5F9EA0; /* Light Blue */
-}  
+  --color-primary: #00ff00; /* Vibrant Green */
+  --color-secondary: #0000ff; /* Neon Blue */
+  --color-tertiary: #a0a0a0; /* Metallic Gray */
+  --color-error: #ff0000; /* Bright Red */
+  --color-bg: #000000; /* Black Background */
+  --color-highlight: #ff00ff; /* Neon Pink */
+  --color-warning: #ffa500; /* Orange */
+  --color-success: #008000; /* Bright Green */
+  --color-information: #5f9ea0; /* Light Blue */
+}
 body {
-    color: var(--color-primary);
-    background: var(--color-bg);
+  color: var(--color-primary);
+  background: var(--color-bg);
 }
