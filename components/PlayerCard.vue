@@ -2,7 +2,7 @@
   <div class="border-2 border-primary">
     <div class="">
       <div class="flex flex-row">
-        <div class="h-36 w-1/3">
+        <div class="h-1/3 w-1/3">
           <img
             :src="playerAvatar"
             alt="Player's Avatar"
@@ -11,14 +11,14 @@
         </div>
         <div class="flex flex-col">
           <h3 class="text-3xl mb-5">{{ player.name }}</h3>
-          <ul>
-            <li>Team: {{ player.team }}</li>
-            <li>Position: {{ player.position }}</li>
-            <li>Points: {{ player.points }}</li>
-          </ul>
         </div>
-        <p>{{ player.description }}</p>
       </div>
+      <ul>
+        <li>Team: {{ player.team }}</li>
+        <li>Position: {{ player.position }}</li>
+        <li>Points: {{ player.points }}</li>
+      </ul>
+      <p>{{ player.description }}</p>
     </div>
   </div>
 </template>
@@ -57,11 +57,13 @@ const player: Ref<PlayerData> = ref({
 const imagePaths = ref<string[]>([]);
 
 onMounted(async () => {
-  const placeholderImages: Record<string, () => Promise<unknown>> =
+  const placeholderImages: Record<string, () => Promise<any>> =
     import.meta.glob('@/assets/images/placeholders/*.png');
 
   for (const path in placeholderImages) {
-    imagePaths.value.push((await placeholderImages[path]()).default);
+    const importedImage = await placeholderImages[path]();
+    const typedImage: string = importedImage.default;
+    imagePaths.value.push(typedImage);
   }
 });
 
