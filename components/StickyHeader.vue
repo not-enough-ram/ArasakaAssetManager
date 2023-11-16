@@ -4,7 +4,7 @@ const authenticated = true;
 </script>
 
 <template>
-  <header class="sticky-header">
+  <header class="sticky-header border-b-2 border-primary">
     <div class="logo">
       <img src="../assets/images/arasaka_green.png" height="50" alt="a cat" />
     </div>
