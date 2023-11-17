@@ -17,48 +17,7 @@ onMounted(() => {
 const userName = 'user'; //use actuall user name when auth is ready
 
 //TODO: smaller functions/Switch case
-/* const submitInput = () => {
-  if (userInput.value.trim()) {
-    const input = userInput.value.trim().toLowerCase();
-
-    if (input === 'clear') {
-      clearMessages();
-    } else {
-      const serverPrefix = `${userName}$:`;
-      addMessage(
-        {
-          type: 'message',
-          content: `${serverPrefix} ${input}`,
-        },
-        false
-      );
-
-      const [command, ...pathParts] = input.split(' ');
-      if (command === 'cd') {
-        const pathInput = pathParts.join('/').replace(/^\/+/, '');
-        const normalizedPathInput = `/${pathInput
-          .charAt(0)
-          .toUpperCase()}${pathInput.slice(1)}`;
-
-        if (
-          router.getRoutes().some((route) => route.path === normalizedPathInput)
-        ) {
-          router.push(normalizedPathInput);
-        } else {
-          addMessage(
-            {
-              type: 'error',
-              content: `ERROR: No such directory found: ${normalizedPathInput}`,
-            },
-            true
-          );
-        }
-      }
-    }
-
-    userInput.value = '';
-  }
-}; */
+//FIXME: cd createcontent not working
 const submitInput = () => {
   if (userInput.value.trim()) {
     const input = userInput.value.trim().toLowerCase();
