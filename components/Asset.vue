@@ -4,7 +4,7 @@ const props = defineProps({
   title: String,
   description: String,
   owner: String,
-  imageUrl: String
+  imageUrl: String,
 });
 </script>
 
@@ -13,9 +13,7 @@ const props = defineProps({
   <p>{{ props.title }}</p>
   <p>{{ props.description }}</p>
   <p>{{ props.owner }}</p>
-  <p>{{ props.imageUrl }}</p>
+  <img :src="props.imageUrl" width="40px" height="40px" />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

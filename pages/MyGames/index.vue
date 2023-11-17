@@ -3,7 +3,7 @@ import { fetchData } from "~/services/ApiService";
 
 const gamesData = ref(null);
 onMounted(async () => {
-  const uri = "/my-games";
+  const uri = "http://localhost:8080/my-games";
   const data = await fetchData(uri);
   if (!data) {
     return;
@@ -22,7 +22,7 @@ onMounted(async () => {
     :game-master="game.gameMaster"
     :image-url="game.imageUrl"
     :players="game.players"
-    :text="game.text"
+    :description="game.description"
   />
 </template>
 
