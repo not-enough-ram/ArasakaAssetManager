@@ -4,7 +4,6 @@ export default defineNuxtConfig({
   typescript: { strict: true },
   css: ['~/assets/sass/main.css', '~/assets/sass/icons.css'],
   modules: [],
-
   postcss: {
     plugins: {
       tailwindcss: {},
