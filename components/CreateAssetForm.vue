@@ -6,8 +6,8 @@ const props = defineProps({
 });
 
 const formData = ref({
-  title: props.title || "",
-  description: props.description || "",
+  title: props.title || '',
+  description: props.description || '',
   image: null as File | null,
 });
 
@@ -23,8 +23,11 @@ function submitForm() {
 </script>
 
 <template>
-  <div class="w-1/3 border-2 border-primary p-5 max-w-360">
-    <form @submit.prevent="submitForm" class="space-y-4">
+  <div class="border-2 border-primary p-5 card-assets">
+    <form
+      @submit.prevent="submitForm"
+      class="space-y-4 flex flex-col justify-between h-full"
+    >
       <BaseInput type="text" v-model="formData.title" placeholder="Title..." />
       <BaseTextarea
         v-model="formData.description"
@@ -50,5 +53,9 @@ function submitForm() {
 <style scoped>
 #file-upload-button {
   cursor: pointer;
+}
+.card-assets {
+  width: 360px;
+  height: 460px;
 }
 </style>
