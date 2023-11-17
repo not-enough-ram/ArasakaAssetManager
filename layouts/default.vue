@@ -24,5 +24,6 @@ import Sidebar from '~/components/Sidebar.vue';
 .mainContent {
   width: calc(100% - 250px);
   padding-left: 260px;
+  padding-top: 15px;
 }
 </style>
