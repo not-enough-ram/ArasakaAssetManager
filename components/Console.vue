@@ -3,7 +3,8 @@ import { ref, onMounted } from 'vue';
 import useConsoleMessages from '@/composables/useConsoleMessages';
 import { useRouter } from 'vue-router';
 
-const { messages, addMessage, initializeConsole } = useConsoleMessages();
+const { messages, addMessage, clearMessages, initializeConsole } =
+  useConsoleMessages();
 const userInput = ref('');
 
 const router = useRouter();
@@ -15,39 +16,43 @@ onMounted(() => {
 });
 const userName = 'user'; //use actuall user name when auth is ready
 
+//TODO: smaller functions/Switch case
 const submitInput = () => {
   if (userInput.value.trim()) {
     const input = userInput.value.trim().toLowerCase();
-    const serverPrefix = `user$:`;
 
-    addMessage(
-      {
-        type: 'message',
-        content: `${serverPrefix} ${input}`,
-      },
-      false
-    );
+    if (input === 'clear') {
+      clearMessages();
+    } else {
+      const serverPrefix = `${userName}$:`;
+      addMessage(
+        {
+          type: 'message',
+          content: `${serverPrefix} ${input}`,
+        },
+        false
+      );
 
-    const [command, ...pathParts] = input.split(' ');
-    if (command === 'cd') {
-      const pathInput = pathParts.join('/').replace(/^\/+/, '');
+      const [command, ...pathParts] = input.split(' ');
+      if (command === 'cd') {
+        const pathInput = pathParts.join('/').replace(/^\/+/, '');
+        const normalizedPathInput = `/${pathInput
+          .charAt(0)
+          .toUpperCase()}${pathInput.slice(1)}`;
 
-      const normalizedPathInput = `/${pathInput
-        .charAt(0)
-        .toUpperCase()}${pathInput.slice(1)}`;
-
-      if (
-        router.getRoutes().some((route) => route.path === normalizedPathInput)
-      ) {
-        router.push(normalizedPathInput);
-      } else {
-        addMessage(
-          {
-            type: 'error',
-            content: `ERROR: No such directory found: ${normalizedPathInput}`,
-          },
-          true
-        );
+        if (
+          router.getRoutes().some((route) => route.path === normalizedPathInput)
+        ) {
+          router.push(normalizedPathInput);
+        } else {
+          addMessage(
+            {
+              type: 'error',
+              content: `ERROR: No such directory found: ${normalizedPathInput}`,
+            },
+            true
+          );
+        }
       }
     }
 
