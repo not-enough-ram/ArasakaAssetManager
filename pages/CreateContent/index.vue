@@ -30,7 +30,7 @@ const activeTab = ref<TabName>('game');
       class="w-full h-full flex justify-center border-2 border-primary border-t-0"
     >
       <div v-show="activeTab === 'game'" class="mb-24 mt-5">
-        <Typewriter :text="'Add a game...'" :typingDelay="150" class="">
+        <Typewriter :text="'Add a game...'" :typingDelay="150">
           <template #default="{ animatedText }">
             <h1 class="text-primary text-4xl">{{ animatedText }}</h1>
           </template>
@@ -38,7 +38,7 @@ const activeTab = ref<TabName>('game');
         <CreateGameForm />
       </div>
       <div v-show="activeTab === 'asset'" class="mb-24 mt-5">
-        <Typewriter :text="'Add an asset...'" :typingDelay="150" class="">
+        <Typewriter :text="'Add an asset...'" :typingDelay="150">
           <template #default="{ animatedText }">
             <h1 class="text-primary text-4xl">{{ animatedText }}</h1>
           </template>
