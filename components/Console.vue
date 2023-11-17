@@ -19,10 +19,14 @@ const submitInput = () => {
   if (userInput.value.trim()) {
     const input = userInput.value.trim().toLowerCase();
     const serverPrefix = `user$:`;
-    addMessage({
-      type: 'message',
-      content: `${serverPrefix} ${input}`,
-    });
+
+    addMessage(
+      {
+        type: 'message',
+        content: `${serverPrefix} ${input}`,
+      },
+      false
+    );
 
     const [command, ...pathParts] = input.split(' ');
     if (command === 'cd') {
@@ -37,10 +41,13 @@ const submitInput = () => {
       ) {
         router.push(normalizedPathInput);
       } else {
-        addMessage({
-          type: 'error',
-          content: `ERROR: No such directory found: ${normalizedPathInput}`,
-        });
+        addMessage(
+          {
+            type: 'error',
+            content: `ERROR: No such directory found: ${normalizedPathInput}`,
+          },
+          true
+        );
       }
     }
 
