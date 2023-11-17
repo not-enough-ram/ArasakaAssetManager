@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import useConsoleMessages from '@/composables/useConsoleMessages';
+const { addMessage } = useConsoleMessages();
 const props = defineProps({
   title: String,
   gameMaster: String,
@@ -33,9 +35,48 @@ function handleFileUpload(event: Event) {
 }
 
 function submitForm() {
-  // Process form data here
-  console.log(formData.value);
+  let formIsValid = true;
+
+  if (!formData.value.title) {
+    addMessage({ type: 'error', content: 'ERROR: Title is missing a value' });
+    formIsValid = false;
+  }
+  if (!formData.value.gameMaster) {
+    addMessage({
+      type: 'error',
+      content: 'ERROR: Game Master is missing a value',
+    });
+    formIsValid = false;
+  }
+  if (formData.value.players.some((player) => player.trim() === '')) {
+    addMessage({
+      type: 'error',
+      content: 'ERROR: One or more player fields are empty',
+    });
+    formIsValid = false;
+  }
+  if (!formData.value.description) {
+    addMessage({
+      type: 'error',
+      content: 'ERROR: Description is missing a value',
+    });
+    formIsValid = false;
+  }
+  if (!formData.value.image) {
+    addMessage({
+      type: 'error',
+      content: 'ERROR: Image has not been uploaded',
+    });
+    formIsValid = false;
+  }
+
+  if (formIsValid) {
+    console.log(formData.value);
+
+    addMessage({ type: 'success', content: 'Data submitted successfully!' });
+  }
 }
+
 const playerCount = computed(() => formData.value.players.length.toString());
 </script>
 

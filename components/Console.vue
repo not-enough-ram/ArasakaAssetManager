@@ -1,29 +1,49 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import useConsoleMessages from '@/composables/useConsoleMessages';
-//import { useRouter } from 'vue-router';
+import { useRouter } from 'vue-router';
 
 const { messages, addMessage, initializeConsole } = useConsoleMessages();
 const userInput = ref('');
 
+const router = useRouter();
 //Breadcrups?
-//const router = useRouter();
 //const currentRoute = router.currentRoute.value.path;
 
 onMounted(() => {
   initializeConsole();
 });
 const userName = 'user'; //use actuall user name when auth is ready
+
 const submitInput = () => {
   if (userInput.value.trim()) {
-    const serverPrefix = `${userName}$:`;
-    addMessage(
-      {
-        type: 'message',
-        content: `${serverPrefix} ${userInput.value}`,
-      },
-      false
-    );
+    const input = userInput.value.trim().toLowerCase();
+    const serverPrefix = `user$:`;
+    addMessage({
+      type: 'message',
+      content: `${serverPrefix} ${input}`,
+    });
+
+    const [command, ...pathParts] = input.split(' ');
+    if (command === 'cd') {
+      const pathInput = pathParts.join('/').replace(/^\/+/, '');
+
+      const normalizedPathInput = `/${pathInput
+        .charAt(0)
+        .toUpperCase()}${pathInput.slice(1)}`;
+
+      if (
+        router.getRoutes().some((route) => route.path === normalizedPathInput)
+      ) {
+        router.push(normalizedPathInput);
+      } else {
+        addMessage({
+          type: 'error',
+          content: `ERROR: No such directory found: ${normalizedPathInput}`,
+        });
+      }
+    }
+
     userInput.value = '';
   }
 };
@@ -67,6 +87,7 @@ const submitInput = () => {
   display: flex;
   flex-direction: column-reverse;
   padding: 10px;
+  background: var(--color-bg);
 }
 .console-output {
   overflow-y: auto;

@@ -1,4 +1,3 @@
-// composables/useConsoleMessages.ts
 import { ref } from 'vue';
 
 interface ConsoleMessage {
@@ -22,7 +21,6 @@ const clearMessages = () => {
   messages.value = [];
 };
 
-// Initialize with a connecting message
 const initializeConsole = () => {
   addMessage({ type: 'info', content: 'connecting...' });
   setTimeout(() => {

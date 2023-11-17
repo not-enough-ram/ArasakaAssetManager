@@ -37,6 +37,7 @@ const toggleConsole = () => {
 .console {
   width: 450px;
   padding: 5px;
+  background: var(--color-bg);
 }
 
 .toggle-console-btn {

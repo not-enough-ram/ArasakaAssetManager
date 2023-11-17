@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import useConsoleMessages from '@/composables/useConsoleMessages';
+const { addMessage } = useConsoleMessages();
+
 const props = defineProps({
   title: String,
   description: String,
@@ -17,8 +20,31 @@ function handleFileUpload(event: Event) {
 }
 
 function submitForm() {
-  // Process form data here
-  console.log(formData.value);
+  let formIsValid = true;
+
+  if (!formData.value.title) {
+    addMessage({ type: 'error', content: 'ERROR: Title is missing a value.' });
+    formIsValid = false;
+  }
+
+  if (!formData.value.description) {
+    addMessage({
+      type: 'error',
+      content: 'ERROR: Description is missing a value.',
+    });
+    formIsValid = false;
+  }
+
+  if (!formData.value.image) {
+    addMessage({ type: 'error', content: 'ERROR: Image is missing.' });
+    formIsValid = false;
+  }
+
+  if (formIsValid) {
+    console.log('Form data:', formData.value);
+
+    addMessage({ type: 'success', content: 'Data submitted successfully!' });
+  }
 }
 </script>
 
