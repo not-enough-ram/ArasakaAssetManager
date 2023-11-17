@@ -13,7 +13,7 @@ const props = defineProps({
   <p>{{ props.title }}</p>
   <p>{{ props.description }}</p>
   <p>{{ props.owner }}</p>
-  <img :src="props.imageUrl" width="40px" height="40px" />
+  <img :src="props.imageUrl" class="w-20" />
 </template>
 
 <style scoped></style>

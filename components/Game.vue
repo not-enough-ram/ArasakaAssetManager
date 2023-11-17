@@ -16,7 +16,7 @@ const props = defineProps({
   <ul>
     <li v-for="(player, index) in props.players" :key="index">{{ player }}</li>
   </ul>
-  <img :src="props.imageUrl" width="200px" height="200px" />
+  <img :src="props.imageUrl" class="w-20" alt="Some Image" />
 </template>
 
 <style scoped></style>
