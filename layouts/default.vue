@@ -12,6 +12,9 @@ import Sidebar from '~/components/Sidebar.vue';
       <slot />
     </section>
   </div>
+  <div>
+    <ConsoleWrapper />
+  </div>
   <Footer />
 </template>
 

@@ -33,6 +33,7 @@
   --color-bg: #000000; /* Black Background */
   --color-highlight: #ff00ff; /* Neon Pink */
   --color-warning: #ffa500; /* Orange */
+  --color-info: #ffe600; /* Yellow */
   --color-success: #008000; /* Bright Green */
   --color-information: #5f9ea0; /* Light Blue */
 }
