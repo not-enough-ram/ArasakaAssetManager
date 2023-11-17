@@ -4,7 +4,7 @@ const { addMessage } = useConsoleMessages();
 
 export async function fetchData(
   uri: string,
-  onProgress: (percentage: number) => void
+  onProgress: (percentage: number) => void = () => {}
 ): Promise<any | null> {
   addMessage({ type: 'info', content: `Starting request to ${uri}` });
 
