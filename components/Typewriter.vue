@@ -10,8 +10,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, ref, onMounted, nextTick, watch } from 'vue';
-
 const props = defineProps({
   text: {
     type: String,

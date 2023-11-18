@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue';
 import useConsoleMessages from '@/composables/useConsoleMessages';
 import { useRouter } from 'vue-router';
-
+import { processInput } from '~/services/consoleService';
 const { messages, addMessage, clearMessages, initializeConsole } =
   useConsoleMessages();
 const userInput = ref('');
@@ -16,56 +16,9 @@ onMounted(() => {
 });
 const userName = 'user'; //use actuall user name when auth is ready
 
-//TODO: smaller functions/Switch case
-//FIXME: cd createcontent not working
 const submitInput = () => {
   if (userInput.value.trim()) {
-    const input = userInput.value.trim().toLowerCase();
-
-    if (input === 'clear') {
-      clearMessages();
-    } else if (input === '!help') {
-      const helpMessage = `Available commands:\n- clear: Clears the console messages.\n- cd <path>: Changes directory to the specified path.`;
-      addMessage(
-        {
-          type: 'info',
-          content: helpMessage,
-        },
-        true
-      );
-    } else {
-      const serverPrefix = `${userName}$:`;
-      addMessage(
-        {
-          type: 'message',
-          content: `${serverPrefix} ${input}`,
-        },
-        false
-      );
-
-      const [command, ...pathParts] = input.split(' ');
-      if (command === 'cd') {
-        const pathInput = pathParts.join('/').replace(/^\/+/, '');
-        const normalizedPathInput = `/${pathInput
-          .charAt(0)
-          .toUpperCase()}${pathInput.slice(1)}`;
-
-        if (
-          router.getRoutes().some((route) => route.path === normalizedPathInput)
-        ) {
-          router.push(normalizedPathInput);
-        } else {
-          addMessage(
-            {
-              type: 'error',
-              content: `ERROR: No such directory found: ${normalizedPathInput}`,
-            },
-            true
-          );
-        }
-      }
-    }
-
+    processInput(userInput.value, userName, router);
     userInput.value = '';
   }
 };
