@@ -99,15 +99,13 @@ function handleInput(
   newValue: string,
   field: { value: string; valid: boolean }
 ) {
-  // Update the modelValue first
   field.value = newValue;
-  // Validate the field
   validateField(field);
 }
 function addFieldErrorMessage(fieldName: string) {
   addMessage({
     type: 'error',
-    content: `<ERROR> ${fieldName} is missing a value`,
+    content: `${fieldName} is missing a value`,
   });
 }
 

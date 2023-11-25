@@ -34,6 +34,15 @@ const submitInput = () => {
         :key="index"
         :class="`message ${message.type}`"
       >
+        <span>{{ message.author }}</span>
+        <span
+          v-if="
+            message.type &&
+            (message.type === 'error' || message.type === 'success')
+          "
+          :class="`${message.type}-tag`"
+          >&lt;{{ message.type.toUpperCase() }}&gt;</span
+        >
         {{ message.content }}
       </div>
     </div>
@@ -94,5 +103,17 @@ const submitInput = () => {
 }
 .console-input {
   color: var(--color-tertiary);
+}
+.error-tag {
+  background-color: var(--color-error);
+  color: white;
+}
+.success-tag {
+  background-color: var(--color-success);
+  color: white;
+}
+.warning-tag {
+  background-color: var(--color-warning);
+  color: white;
 }
 </style>

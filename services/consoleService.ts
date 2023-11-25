@@ -73,7 +73,7 @@ function changeDirectory(pathParts: string[], router: any) {
     addMessage(
       {
         type: 'error',
-        content: `ERROR: No such directory found: ${userInputPath}. Please ensure the path is correct.`,
+        content: `No such directory found: ${userInputPath}. Please ensure the path is correct.`,
       },
       true
     );

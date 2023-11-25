@@ -31,20 +31,20 @@ function submitForm() {
   validateField(formData.value.description);
 
   if (!formData.value.title.valid) {
-    addMessage({ type: 'error', content: 'ERROR: Title is missing a value.' });
+    addMessage({ type: 'error', content: 'Title is missing a value.' });
     formIsValid = false;
   }
 
   if (!formData.value.description.valid) {
     addMessage({
       type: 'error',
-      content: 'ERROR: Description is missing a value.',
+      content: 'Description is missing a value.',
     });
     formIsValid = false;
   }
 
   if (!formData.value.image.valid) {
-    addMessage({ type: 'error', content: 'ERROR: Image is missing.' });
+    addMessage({ type: 'error', content: 'Image is missing.' });
     formIsValid = false;
   }
 
@@ -57,7 +57,10 @@ function submitForm() {
 
     console.log('Form data:', cleanedFormData);
 
-    addMessage({ type: 'success', content: 'Data submitted successfully!' });
+    addMessage({
+      type: 'success',
+      content: '<SUCCESS> Data submitted successfully!',
+    });
   }
 }
 
