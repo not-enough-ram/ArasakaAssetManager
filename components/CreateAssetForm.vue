@@ -9,25 +9,33 @@ const props = defineProps({
 });
 
 const formData = ref({
-  title: props.title || '',
-  description: props.description || '',
-  image: null as File | null,
+  title: { value: props.title || '', valid: true },
+  description: { value: props.description || '', valid: true },
+  image: { value: props.image || null, valid: true },
 });
 
 function handleFileUpload(event: Event) {
   const file = (event.target as HTMLInputElement).files?.[0];
-  formData.value.image = file || null;
+  formData.value.image.value = file || null;
+  formData.value.image.valid = !!file;
+}
+
+function validateField(field: { value: string | File; valid: boolean }) {
+  field.valid = !!field.value;
 }
 
 function submitForm() {
   let formIsValid = true;
 
-  if (!formData.value.title) {
+  validateField(formData.value.title);
+  validateField(formData.value.description);
+
+  if (!formData.value.title.valid) {
     addMessage({ type: 'error', content: 'ERROR: Title is missing a value.' });
     formIsValid = false;
   }
 
-  if (!formData.value.description) {
+  if (!formData.value.description.valid) {
     addMessage({
       type: 'error',
       content: 'ERROR: Description is missing a value.',
@@ -35,16 +43,30 @@ function submitForm() {
     formIsValid = false;
   }
 
-  if (!formData.value.image) {
+  if (!formData.value.image.valid) {
     addMessage({ type: 'error', content: 'ERROR: Image is missing.' });
     formIsValid = false;
   }
 
   if (formIsValid) {
-    console.log('Form data:', formData.value);
+    const cleanedFormData = {
+      title: formData.value.title.value,
+      description: formData.value.description.value,
+      image: formData.value.image.value,
+    };
+
+    console.log('Form data:', cleanedFormData);
 
     addMessage({ type: 'success', content: 'Data submitted successfully!' });
   }
+}
+
+function handleInput(
+  newValue: string,
+  field: { value: string; valid: boolean }
+) {
+  field.value = newValue;
+  validateField(field);
 }
 </script>
 
@@ -54,12 +76,22 @@ function submitForm() {
       @submit.prevent="submitForm"
       class="space-y-4 flex flex-col justify-between h-full"
     >
-      <BaseInput type="text" v-model="formData.title" placeholder="Title..." />
+      <BaseInput
+        type="text"
+        v-model="formData.title.value"
+        :is-valid="formData.title.valid"
+        placeholder="Title..."
+        @update:modelValue="(newValue) => handleInput(newValue, formData.title)"
+      />
       <BaseTextarea
-        v-model="formData.description"
+        v-model="formData.description.value"
         placeholder="Description..."
         :maxHeight="'350px'"
         :maxWidth="'600px'"
+        :is-valid="formData.description.valid"
+        @update:modelValue="
+          (newValue: string) => handleInput(newValue, formData.description)
+        "
       />
       <div class="w-full mb-12 cursor-pointer">
         <input
