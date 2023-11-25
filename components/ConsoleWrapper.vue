@@ -1,5 +1,5 @@
 <template>
-  <div class="console-container" :class="{ 'is-visible': isConsoleVisible }">
+  <div class="console-container" :class="{ 'is-visible': consoleIsVisible }">
     <BaseButton @click="toggleConsole" class="toggle-console-btn"
       >Console</BaseButton
     >
@@ -10,11 +10,10 @@
 </template>
 
 <script setup lang="ts">
-const isConsoleVisible = ref(false);
-
-const toggleConsole = () => {
-  isConsoleVisible.value = !isConsoleVisible.value;
-};
+import {
+  toggleConsole,
+  consoleIsVisible,
+} from '~/composables/useConsoleMessages';
 </script>
 
 <style scoped>

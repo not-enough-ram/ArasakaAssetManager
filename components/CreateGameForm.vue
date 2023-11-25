@@ -139,8 +139,4 @@ const playerCount = computed(() => formData.value.players.length.toString());
   </div>
 </template>
 
-<style scoped>
-#file-upload-button {
-  cursor: pointer;
-}
-</style>
+<style scoped></style>

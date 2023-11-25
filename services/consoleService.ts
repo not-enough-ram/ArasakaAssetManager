@@ -1,10 +1,4 @@
-// consoleService.ts
 const { addMessage, clearMessages } = useConsoleMessages();
-
-/* type Message = {
-  type: string;
-  content: string;
-}; */
 
 export function processInput(
   input: string,
@@ -39,6 +33,7 @@ function showHelp(): void {
 
 function processCommand(input: string, userName: string, router: any) {
   const serverPrefix = `${userName}$:`;
+
   addMessage(
     {
       type: 'message',

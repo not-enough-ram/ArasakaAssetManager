@@ -1,4 +1,9 @@
 import { ref } from 'vue';
+export const consoleIsVisible = ref(false);
+
+export function toggleConsole() {
+  return (consoleIsVisible.value = !consoleIsVisible.value);
+}
 
 interface ConsoleMessage {
   type: 'error' | 'success' | 'warning' | 'info' | 'message';
@@ -11,6 +16,9 @@ const addMessage = (
   message: ConsoleMessage,
   isSystemMessage: boolean = true
 ) => {
+  if (message.type === 'error' && !consoleIsVisible.value) {
+    toggleConsole();
+  }
   const formattedContent = isSystemMessage
     ? `arasaka.net: ${message.content}`
     : message.content;

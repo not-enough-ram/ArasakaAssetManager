@@ -65,10 +65,11 @@ nav ul {
   list-style: none;
   padding: 0;
   display: flex;
+  gap: 5px;
 }
 
 nav li {
-  margin: 0 10px;
+  margin: 0;
 }
 
 nav a {

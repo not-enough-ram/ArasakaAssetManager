@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import useConsoleMessages from '@/composables/useConsoleMessages';
+import useConsoleMessages, {
+  consoleIsVisible,
+} from '@/composables/useConsoleMessages';
 import { useRouter } from 'vue-router';
 import { processInput } from '~/services/consoleService';
 const { messages, addMessage, clearMessages, initializeConsole } =
@@ -42,6 +44,7 @@ const submitInput = () => {
         v-model="userInput"
         @keyup.enter="submitInput"
         class="console-input"
+        :hasFocus="consoleIsVisible"
       />
     </div>
   </div>
