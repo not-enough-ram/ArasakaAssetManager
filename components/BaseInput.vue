@@ -5,7 +5,7 @@
       :value="modelValue"
       @input="updateValue"
       :placeholder="placeholder"
-      class="w-full h-8 px-4 bg-bg border-2 border-primary text-primary placeholder-gray-600 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-200 ease-in-out"
+      class="w-full h-8 px-4 bg-bg border-2 border-primary text-tertiary placeholder-gray-600 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all duration-200 ease-in-out"
       ref="inputRef"
       :class="isValid ? '' : 'border-error'"
     />

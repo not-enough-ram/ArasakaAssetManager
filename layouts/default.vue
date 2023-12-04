@@ -16,6 +16,9 @@ import Sidebar from '~/components/Sidebar.vue';
     <ConsoleWrapper />
   </div>
   <Footer />
+  <div class="fixed bottom-0 right-0">
+    <Coordinates />
+  </div>
 </template>
 
 <style scoped>

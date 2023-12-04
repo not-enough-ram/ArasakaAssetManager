@@ -3,7 +3,7 @@
     <BaseButton @click="toggleConsole" class="toggle-console-btn"
       >Console</BaseButton
     >
-    <div class="console">
+    <div class="console pt-5">
       <Console />
     </div>
   </div>

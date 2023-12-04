@@ -5,8 +5,7 @@ import useConsoleMessages, {
 } from '@/composables/useConsoleMessages';
 import { useRouter } from 'vue-router';
 import { processInput } from '~/services/consoleService';
-const { messages, addMessage, clearMessages, initializeConsole } =
-  useConsoleMessages();
+const { messages, initializeConsole } = useConsoleMessages();
 const userInput = ref('');
 
 const router = useRouter();
