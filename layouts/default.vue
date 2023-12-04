@@ -1,35 +1,22 @@
-<script setup lang="ts">
-import Sidebar from '~/components/Sidebar.vue';
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <StickyHeader />
-  <div class="container">
-    <aside>
-      <Sidebar />
-    </aside>
-    <section class="mainContent">
+  <div class="flex flex-col h-screen">
+    <section class="mainContent h-screen">
       <slot />
     </section>
-  </div>
-  <div>
-    <ConsoleWrapper />
-  </div>
-  <Footer />
-  <div class="fixed bottom-0 right-0">
-    <Coordinates />
+    <div class="relative">
+      <Footer />
+    </div>
   </div>
 </template>
 
 <style scoped>
-.container {
-  display: flex;
-  flex-direction: column;
-}
-
 .mainContent {
-  width: calc(100% - 250px);
-  padding-left: 260px;
-  padding-top: 15px;
+  width: 100%;
+  height: 100%;
+}
+.hidden {
+  display: none;
 }
 </style>

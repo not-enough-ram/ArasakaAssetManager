@@ -23,6 +23,7 @@ export default {
       },
       fontFamily: {
         mono: ['"IBM Plex Mono"', 'monospace'],
+        arasaka: ['"rabikiso"', 'serif'],
       },
       maxWidth: {
         360: '360px',

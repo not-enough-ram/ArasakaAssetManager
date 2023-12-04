@@ -37,10 +37,16 @@
   --color-success: #008000; /* Bright Green */
   --color-information: #5f9ea0; /* Light Blue */
 }
+html {
+  height: 100%;
+  width: 100%;
+}
 body {
   color: var(--color-primary);
   background: var(--color-bg);
   font-family: 'IBM BIOS-2y', Fallback, sans-serif;
+  width: 100%;
+  height: 100%;
 }
 
 .inverted {
