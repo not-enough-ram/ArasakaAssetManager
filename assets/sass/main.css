@@ -77,3 +77,6 @@ body {
   scrollbar-color: #00ff00 #000000;
   scrollbar-width: thin;
 }
+.pixelated {
+  filter: contrast(200%) brightness(80%);
+}

@@ -1,15 +1,7 @@
 <template>
-  <div v-if="menuIsOpen" class="absolute bottom-12" ref="menuRef" @click.stop>
+  <div v-if="menuIsOpen" class="menu absolute bg-bg" ref="menuRef" @click.stop>
     <nav class="border-primary border-2 p-2 border-b-0 w-52">
       <ul class="flex flex-col w-full">
-        <li class="flex flex-col justify-center">
-          <div>
-            <div class="logo-container">
-              <ArasakaLogo />
-            </div>
-            <h2 class="text-primary font-arasaka text-xl">Asset Manager</h2>
-          </div>
-        </li>
         <li
           class="hover:inverted"
           v-if="authenticated"
@@ -71,6 +63,10 @@ const authenticated = true;
 </script>
 
 <style scoped>
+.menu {
+  z-index: 10;
+  bottom: 48px;
+}
 .logo-container {
   overflow: hidden;
   height: 81px;
