@@ -17,7 +17,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <h1>My Games</h1>
+  <h1>My Assets</h1>
   <Asset
     v-for="asset in assetsData"
     :key="asset.id"

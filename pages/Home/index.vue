@@ -1,18 +1,15 @@
 <script setup lang="ts">
-
 import Sidebar from "~/components/Sidebar.vue";
 </script>
 
 <template>
   <aside>
-    <Sidebar/>
+    <Sidebar />
   </aside>
   <section class="mainContent">
-    <slot/>
+    <slot />
   </section>
-  <Footer/>
+  <Footer />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
