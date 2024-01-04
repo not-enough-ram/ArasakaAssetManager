@@ -1,9 +1,12 @@
 <template>
-  <div class="icon-wrapper m-5 w-24 h-24 cursor-pointer">
+  <div
+    class="icon-wrapper w-24 h-24 cursor-pointer"
+    @click="$emit('iconClick')"
+  >
     <a @click="navigateTo(`${props.linkTarget}`)">
       <div class="flex flex-col justify-center">
         <div :class="`icon-${props.icon} text-5xl text-center`"></div>
-        <span class="link-text font-mono font-bold text-center">{{
+        <span class="link-text font-mono font-bold text-center mt-1">{{
           props.linkText
         }}</span>
       </div>
@@ -17,6 +20,8 @@ const props = defineProps({
   icon: String,
   linkText: String,
 });
+
+const emit = defineEmits(['iconClick']);
 </script>
 
 <style scoped>

@@ -14,6 +14,9 @@
       <Footer />
     </div>
   </div>
+  <div v-if="consoleIsVisible" class="absolute bottom-24 right-5">
+    <Console />
+  </div>
 </template>
 
 <style scoped>

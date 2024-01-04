@@ -63,7 +63,7 @@ const submitInput = () => {
   display: flex;
   flex-direction: column;
   height: 50vh;
-  width: 450px;
+  width: 550px;
   border: 2px solid;
 }
 
@@ -82,7 +82,7 @@ const submitInput = () => {
 }
 
 .console-input {
-  min-height: 40px;
+  min-height: 30px;
   margin-top: 5px;
 }
 .message {

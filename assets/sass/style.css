@@ -1,4 +1,4 @@
-/* @font-face {
+@font-face {
   font-family: 'icomoon';
   src:  url('fonts/icomoon.eot?lyu2m0');
   src:  url('fonts/icomoon.eot?lyu2m0#iefix') format('embedded-opentype'),
@@ -8,10 +8,9 @@
   font-weight: normal;
   font-style: normal;
   font-display: block;
-} */
+}
 
-[class^='icon-'],
-[class*=' icon-'] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: never;
@@ -27,131 +26,131 @@
 }
 
 .icon-office:before {
-  content: '\e903';
+  content: "\e903";
 }
 .icon-file-text:before {
-  content: '\e922';
+  content: "\e922";
 }
 .icon-profile:before {
-  content: '\e923';
+  content: "\e923";
 }
 .icon-file-picture:before {
-  content: '\e927';
+  content: "\e927";
 }
 .icon-folder:before {
-  content: '\e92f';
+  content: "\e92f";
 }
 .icon-folder-open:before {
-  content: '\e930';
+  content: "\e930";
 }
 .icon-folder-upload:before {
-  content: '\e934';
+  content: "\e934";
 }
 .icon-barcode:before {
-  content: '\e937';
+  content: "\e937";
 }
 .icon-address-book:before {
-  content: '\e944';
+  content: "\e944";
 }
 .icon-display:before {
-  content: '\e956';
+  content: "\e956";
 }
 .icon-laptop:before {
-  content: '\e957';
+  content: "\e957";
 }
 .icon-floppy-disk:before {
-  content: '\e962';
+  content: "\e962";
 }
 .icon-user:before {
-  content: '\e971';
+  content: "\e971";
 }
 .icon-user-check:before {
-  content: '\e975';
+  content: "\e975";
 }
 .icon-user-tie:before {
-  content: '\e976';
+  content: "\e976";
 }
 .icon-equalizer:before {
-  content: '\e992';
+  content: "\e992";
 }
 .icon-cog:before {
-  content: '\e994';
+  content: "\e994";
 }
 .icon-bug:before {
-  content: '\e999';
+  content: "\e999";
 }
 .icon-pie-chart:before {
-  content: '\e99a';
+  content: "\e99a";
 }
 .icon-stats-bars:before {
-  content: '\e99c';
+  content: "\e99c";
 }
 .icon-magnet:before {
-  content: '\e9ab';
+  content: "\e9ab";
 }
 .icon-bin:before {
-  content: '\e9ac';
+  content: "\e9ac";
 }
 .icon-list:before {
-  content: '\e9ba';
+  content: "\e9ba";
 }
 .icon-tree:before {
-  content: '\e9bc';
+  content: "\e9bc";
 }
 .icon-menu:before {
-  content: '\e9bd';
+  content: "\e9bd";
 }
 .icon-download2:before {
-  content: '\e9c5';
+  content: "\e9c5";
 }
 .icon-download3:before {
-  content: '\e9c7';
+  content: "\e9c7";
 }
 .icon-upload3:before {
-  content: '\e9c8';
+  content: "\e9c8";
 }
 .icon-sphere:before {
-  content: '\e9c9';
+  content: "\e9c9";
 }
 .icon-earth:before {
-  content: '\e9ca';
+  content: "\e9ca";
 }
 .icon-bookmark:before {
-  content: '\e9d2';
+  content: "\e9d2";
 }
 .icon-bookmarks:before {
-  content: '\e9d3';
+  content: "\e9d3";
 }
 .icon-enter:before {
-  content: '\ea13';
+  content: "\ea13";
 }
 .icon-exit:before {
-  content: '\ea14';
+  content: "\ea14";
 }
 .icon-volume-low:before {
-  content: '\ea28';
+  content: "\ea28";
 }
 .icon-volume-mute2:before {
-  content: '\ea2a';
+  content: "\ea2a";
 }
 .icon-filter:before {
-  content: '\ea5b';
+  content: "\ea5b";
 }
 .icon-share:before {
-  content: '\ea7d';
+  content: "\ea7d";
 }
 .icon-embed:before {
-  content: '\ea7f';
+  content: "\ea7f";
 }
 .icon-embed2:before {
-  content: '\ea80';
+  content: "\ea80";
 }
 .icon-terminal:before {
-  content: '\ea81';
+  content: "\ea81";
 }
 .icon-github:before {
-  content: '\eab0';
+  content: "\eab0";
 }
 .icon-libreoffice:before {
-  content: '\eae3';
+  content: "\eae3";
 }
