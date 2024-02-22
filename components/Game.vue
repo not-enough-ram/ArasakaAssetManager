@@ -30,6 +30,7 @@ const props = defineProps({
     border: 1px solid #0f0;
     width: 640px;
     margin: 20px;
+    box-shadow: 0 0 0 4px rgb(2, 76, 2);
   }
 
   .retro-title {
