@@ -52,5 +52,4 @@ const pathSegments = computed(() => {
 </script>
 
 <style>
-
 </style>
