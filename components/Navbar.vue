@@ -3,7 +3,11 @@
     class="w-full fixed flex items-center mb-1.5 border-b-2 border-primary p-1 bg-black"
   >
     <div class="flex-none">
-      <a @click.prevent="navigateTo('/')" class="cursor-pointer">
+      <a
+        v-if="!isHomePage"
+        @click.prevent="navigateTo('/')"
+        class="cursor-pointer"
+      >
         <span>&lt; Back</span>
       </a>
     </div>
@@ -31,6 +35,8 @@ import { useRoute, useRouter } from 'vue-router';
 
 const router = useRouter();
 const route = useRoute();
+
+const isHomePage = computed(() => route.path === '/');
 
 const navigateTo = (path: string) => {
   router.push(path);
