@@ -30,7 +30,7 @@
     </nav>
   </div>
   <div
-    class="sticky bottom-0 p-2 border-primary border-2 border-b-0"
+    class="sticky bottom-0 p-2 border-primary border-2 border-b-0 bg-black"
     ref="buttonRef"
   >
     <BaseButton @click="toggleMenu($event)">Menu</BaseButton>

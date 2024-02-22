@@ -8,7 +8,7 @@ const activeTab = ref<TabName>('game');
 
 <template>
   <section
-    class="p-test tabs-container mt-8 w-full h-full flex flex-col justify-center items-center inset-0"
+    class="p-test tabs-container mt-8 w-full h-full flex flex-col justify-center items-center inset-0 bg-black"
   >
     <div class="w-full justify-start flex gap-5 border-b-2 border-primary">
       <button
