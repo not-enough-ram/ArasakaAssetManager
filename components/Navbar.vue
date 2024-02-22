@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full fixed flex items-center mb-1.5 border-b-2 border-primary p-1 bg-black"
+    class="w-full fixed flex items-center mb-1.5 border-b-2 border-primary p-1 bg-black z-20"
   >
     <div class="flex-none">
       <a
@@ -52,5 +52,5 @@ const pathSegments = computed(() => {
 </script>
 
 <style>
-/* Tailor these styles to fit your application's theme */
+
 </style>
