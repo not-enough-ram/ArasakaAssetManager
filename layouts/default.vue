@@ -1,6 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
+  <Navbar />
   <div
     class="w-full h-full absolute top-0 -z-10 flex justify-center opacity-25"
   >
