@@ -21,7 +21,7 @@ export function processInput(
 }
 
 function showHelp(): void {
-  const helpMessage = `Available commands:\n- clear: Clears the console messages.\n- cd <path>: Changes directory to the specified path.`;
+  const helpMessage = `Available commands:\n- clear: Clears the console messages.\n- ls or dir: Displays available directories.\n- cd <path>: Changes directory to the specified path.`;
   addMessage(
     {
       type: 'info',
@@ -47,7 +47,35 @@ function processCommand(input: string, userName: string, router: any) {
     case 'cd':
       changeDirectory(pathParts, router);
       break;
+    case 'ls':
+      listDirectories(router);
+      break;
+    case 'dir':
+      listDirectories(router);
+      break;
   }
+}
+
+function listDirectories(router: any) {
+  const routes = router.getRoutes();
+  const directories = routes
+    .map((route: any) => route.path)
+    .filter((path: string) => path !== '/')
+    .sort()
+    .join('\n- ');
+
+  const messageContent =
+    directories.length > 0
+      ? `Available paths:\n- ${directories}`
+      : 'No available paths.';
+
+  addMessage(
+    {
+      type: 'info',
+      content: messageContent,
+    },
+    true
+  );
 }
 
 function changeDirectory(pathParts: string[], router: any) {
