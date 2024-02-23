@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { fetchData } from "~/services/ApiService";
+import { fetchData } from '~/services/ApiService';
+import type { GameSession } from '~/interface/Types';
 
-const gamesData = ref(null);
+const gamesData: Ref<GameSession[] | null> = ref(null);
 onMounted(async () => {
-  const uri = "http://localhost:8080/my-games";
-  const data = await fetchData(uri);
+  const uri = 'http://localhost:8080/my-games';
+
+  const data: GameSession[] = await fetchData(uri);
   if (!data) {
     return;
   }
@@ -14,7 +16,7 @@ onMounted(async () => {
 </script>
 
 <template>
-    <section class="flex flex-wrap overflow-y-scroll mt-10">
+  <section class="flex flex-wrap">
     <Game
       v-for="game in gamesData"
       :key="game.id"
@@ -27,5 +29,4 @@ onMounted(async () => {
   </section>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
