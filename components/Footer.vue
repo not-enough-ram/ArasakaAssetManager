@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="menuIsOpen"
-    class="menu absolute bg-bg z-10 bottom-12"
+    class="menu absolute bg-bg z-10 bottom-12 transition-all"
     ref="menuRef"
     @click.stop
   >
@@ -35,10 +35,12 @@
     </nav>
   </div>
   <div
-    class="fixed bottom-0 p-2 border-primary border-2 border-b-0 flex justify-center w-52 bg-bg"
+    class="fixed bottom-0 border-primary border-2 border-b-0 flex justify-center w-52 bg-bg"
     ref="buttonRef"
   >
-    <BaseButton class="border-0" @click="toggleMenu($event)">Menu</BaseButton>
+    <BaseButton class="!border-0 w-full h-full !p-2" @click="toggleMenu($event)"
+      >Menu</BaseButton
+    >
   </div>
 </template>
 
