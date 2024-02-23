@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue';
 import useConsoleMessages, {
   consoleIsVisible,
+  toggleConsole,
 } from '@/composables/useConsoleMessages';
 import { useRouter } from 'vue-router';
 import { processInput } from '~/services/consoleService';
@@ -27,6 +28,12 @@ const submitInput = () => {
 
 <template>
   <div class="flex flex-col w-96 h-96 border-2 border-primary">
+    <div
+      @click="toggleConsole"
+      class="w-full flex flex-row justify-end border-b-2 border-primary"
+    >
+      <button class="p-1 mr-2">&#10006;</button>
+    </div>
     <div
       class="custom-scroll-bar overflow-y-auto flex flex-grow flex-col-reverse p-2.5 bg-bg"
     >
