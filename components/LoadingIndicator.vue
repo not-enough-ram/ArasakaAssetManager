@@ -1,7 +1,7 @@
 <template>
-  <div class="loading-container relative">
+  <div class="w-full bg-black relative">
     <div
-      class="loading-bar p-5 flex justify-center items-center text-3xl"
+      class="loading-bar p-5 flex justify-center items-center text-3xl bg-primary relative h-6"
       :style="{ width: loadingPercentage + '%' }"
     >
       <span class="text-content">{{ loadingPercentage }}%</span>
@@ -32,15 +32,7 @@ watchEffect(() => {
 </script>
 
 <style scoped>
-.loading-container {
-  width: 100%;
-  background-color: var(--color-bg);
-}
-
 .loading-bar {
-  position: relative;
-  height: 25px;
-  background-color: var(--color-primary);
   transition: width 0.3s;
 }
 

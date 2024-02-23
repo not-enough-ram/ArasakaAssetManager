@@ -24,9 +24,13 @@ export default {
       fontFamily: {
         mono: ['"IBM Plex Mono"', 'monospace'],
         arasaka: ['"rabikiso"', 'serif'],
+        curier: ['"Courier New"', 'monospace'],
       },
       maxWidth: {
         360: '360px',
+      },
+      boxShadow: {
+        'custom-border': '0 0 0 4px rgb(2, 76, 2)',
       },
     },
   },

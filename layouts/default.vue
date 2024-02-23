@@ -5,7 +5,7 @@
   <div
     class="w-full h-full absolute top-0 -z-10 flex justify-center opacity-25"
   >
-    <ArasakaLogo/>
+    <ArasakaLogo />
   </div>
   <div class="flex flex-col h-screen">
     <main class="mainContent h-screen">
@@ -22,6 +22,6 @@
 
 <style scoped>
 .mainContent {
-  background-color: black;
+  @apply bg-bg;
 }
 </style>

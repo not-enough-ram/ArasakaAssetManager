@@ -26,8 +26,10 @@ const submitInput = () => {
 </script>
 
 <template>
-  <div class="console">
-    <div class="console-messages custom-scroll-bar">
+  <div class="flex flex-col w-96 h-96 border-2 border-primary">
+    <div
+      class="custom-scroll-bar overflow-y-auto flex flex-grow flex-col-reverse p-2.5 bg-bg"
+    >
       <div
         v-for="(message, index) in messages.slice().reverse()"
         :key="index"
@@ -45,13 +47,12 @@ const submitInput = () => {
         {{ message.content }}
       </div>
     </div>
-    <div class="console-input">
+    <div class="mt-1.5">
       <BaseInput
         ref="consoleInput"
         type="text"
         v-model="userInput"
         @keyup.enter="submitInput"
-        class="console-input"
         :hasFocus="consoleIsVisible"
       />
     </div>
@@ -59,32 +60,6 @@ const submitInput = () => {
 </template>
 
 <style scoped>
-.console {
-  display: flex;
-  flex-direction: column;
-  height: 50vh;
-  width: 550px;
-  border: 2px solid;
-}
-
-.console-messages {
-  overflow-y: auto;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column-reverse;
-  padding: 10px;
-  background: var(--color-bg);
-}
-.console-output {
-  overflow-y: auto;
-  flex-grow: 1;
-  max-height: 100vh;
-}
-
-.console-input {
-  min-height: 30px;
-  margin-top: 5px;
-}
 .message {
   color: var(--color-tertiary);
 }
