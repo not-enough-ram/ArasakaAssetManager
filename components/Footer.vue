@@ -35,7 +35,7 @@
     </nav>
   </div>
   <div
-    class="fixed bottom-0 p-2 border-primary border-2 border-b-0 flex justify-center w-52"
+    class="fixed bottom-0 p-2 border-primary border-2 border-b-0 flex justify-center w-52 bg-bg"
     ref="buttonRef"
   >
     <BaseButton class="border-0" @click="toggleMenu($event)">Menu</BaseButton>
