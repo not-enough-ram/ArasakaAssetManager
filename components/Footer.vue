@@ -1,9 +1,14 @@
 <template>
-  <div v-if="menuIsOpen" class="menu absolute bg-bg" ref="menuRef" @click.stop>
+  <div
+    v-if="menuIsOpen"
+    class="menu absolute bg-bg z-10 bottom-12"
+    ref="menuRef"
+    @click.stop
+  >
     <nav class="border-primary border-2 p-2 border-b-0 w-52">
       <ul class="flex flex-col w-full">
         <li
-          class="hover:inverted"
+          class="hover:inverted w-full flex cursor-pointer"
           v-if="authenticated"
           @click="navigateTo('/createcontent')"
         >
@@ -30,10 +35,10 @@
     </nav>
   </div>
   <div
-    class="fixed bottom-0 p-2 border-primary border-2 border-b-0"
+    class="fixed bottom-0 p-2 border-primary border-2 border-b-0 flex justify-center w-52"
     ref="buttonRef"
   >
-    <BaseButton @click="toggleMenu($event)">Menu</BaseButton>
+    <BaseButton class="border-0" @click="toggleMenu($event)">Menu</BaseButton>
   </div>
 </template>
 
@@ -63,25 +68,7 @@ const authenticated = true;
 </script>
 
 <style scoped>
-.menu {
-  z-index: 10;
-  bottom: 48px;
-}
-.logo-container {
-  overflow: hidden;
-  height: 81px;
-}
-li {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  cursor: pointer;
-}
 li:not(:last-child) {
   border-bottom: 2px solid;
-}
-.name {
-  font-family: cedge1, serif;
-  color: var(--color-primary);
 }
 </style>
