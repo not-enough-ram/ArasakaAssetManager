@@ -53,6 +53,7 @@ body {
 }
 
 main {
+  margin-top: 3rem; /* Avoid content being covered by Navbar.vue */
   overflow-y: auto;
   max-height: 100vh;
 }
