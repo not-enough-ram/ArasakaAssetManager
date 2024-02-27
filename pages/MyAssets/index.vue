@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { fetchData } from "~/services/ApiService";
+import { fetchData } from '~/services/ApiService';
+import type { Asset } from '~/interface/Types';
 
-//todo remove this assignment asap
-const assetsData = ref();
+//TODO: remove this assignment asap
+const assetsData: Ref<Asset[] | null> = ref(null);
 onMounted(async () => {
-  const uri = "http://localhost:8080/my-assets";
-  const data = await fetchData(uri);
+  const uri = 'http://localhost:8080/my-assets';
+  const data: Asset[] = await fetchData(uri);
 
   if (!data) {
     return;

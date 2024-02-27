@@ -1,5 +1,5 @@
 <template>
-  <div class="h-1/2 grid auto-cols-auto-auto gap-x-0 gap-y-0 mt-12">
+  <div class="h-1/2 grid auto-cols-auto-auto gap-x-0 gap-y-0">
     <DesktopIcon linkTarget="/mygames" linkText="My Games" icon="folder-open" />
     <DesktopIcon
       linkTarget="/myassets"
