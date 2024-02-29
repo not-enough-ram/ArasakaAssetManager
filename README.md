@@ -5,6 +5,13 @@ Welcome to the ArasakaAsset Manager repository! This project is a mvp for the ma
 - **Asset Cataloguing**: Organize your digital assets with ease, allowing for quick searching, tagging, and retrieval.
 - **Access Control**: Manage user permissions to ensure that sensitive assets are protected and only available to authorized personnel.
 
+
+## Technologies used
+
+- Vue3
+- Nuxt
+- Tailwind
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
