@@ -10,7 +10,7 @@ const props = defineProps({
 
 <template>
   <div
-    class="bg-bg p-5 border-2 border-primary w-2/5 m-5 font-curier shadow-custom-border"
+    class="bg-bg p-5 border-2 border-primary w-1/4 m-5 font-curier shadow-custom-border"
   >
     <p>{{ props.id }}</p>
     <p class="text-xl font-bold italic">{{ props.title }}</p>
