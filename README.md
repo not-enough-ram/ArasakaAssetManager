@@ -1,13 +1,9 @@
 # ArasakaAsset Manager
 
-Welcome to the ArasakaAsset Manager repository! This project is designed to streamline and enhance the management of digital assets. Built with efficiency and user experience in mind, our tool aims to simplify the complexities involved in asset management tasks.
-
-## Features
+Welcome to the ArasakaAsset Manager repository! This project is a mvp for the management of digital assets for my Cyberpunk Red Campaign (and probably other games). It has a nice retro theme. Please notice, that this is the frontend only, the backend you are looking for is in another repo.
 
 - **Asset Cataloguing**: Organize your digital assets with ease, allowing for quick searching, tagging, and retrieval.
-- **Version Control**: Keep track of different versions of your assets to ensure you are always working with the correct iteration.
 - **Access Control**: Manage user permissions to ensure that sensitive assets are protected and only available to authorized personnel.
-- **Integration Capabilities**: Seamlessly integrate with existing systems to enhance your workflow without disrupting your current operations.
 
 ## Getting Started
 
