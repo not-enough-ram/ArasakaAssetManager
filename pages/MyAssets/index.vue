@@ -18,15 +18,16 @@ onMounted(async () => {
 </script>
 
 <template>
-  <h1>My Assets</h1>
-  <Asset
-    v-for="asset in assetsData"
-    :key="asset.id"
-    :title="asset.title"
-    :description="asset.description"
-    :owner="asset.owner"
-    :image-url="asset.imageUrl"
-  />
+  <section class="flex flex-wrap">
+    <Asset
+      v-for="asset in assetsData"
+      :key="asset.id"
+      :title="asset.title"
+      :description="asset.description"
+      :owner="asset.owner"
+      :image-url="asset.imageUrl"
+    />
+  </section>
 </template>
 
 <style scoped></style>
