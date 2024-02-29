@@ -1,75 +1,19 @@
-# Nuxt 3 Minimal Starter
+# ArasakaAsset Manager
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Welcome to the ArasakaAsset Manager repository! This project is designed to streamline and enhance the management of digital assets for my Cyberpunk Red Campaign (but might as well use it for other games).
 
-## Setup
+## Features
 
-Make sure to install the dependencies:
+- **Asset Cataloguing**: Organize your digital assets with ease, allowing for quick searching and retrieval.
+- **Access Control**: Manage user permissions to ensure that sensitive assets are protected and only available to authorized personnel.
+- 
+## Getting Started
 
-```bash
-# npm
-npm install
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-# pnpm
-pnpm install
+### Prerequisites
 
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+What things you need to install the software and how to install them:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+npm install npm@latest -g
